@@ -6,7 +6,7 @@ public class Calculator {
         int operand2;
         String sign; // + - * /
         Scanner scan = new Scanner(System.in);
-        System.out.println("Программа Калькулятор");
+        System.out.println("Программа 'Калькулятор'");
         System.out.println("Введите первое целое число");
         operand1 = scan.nextInt();
         System.out.println("Введите один из четырех знаков арифметической операции: +  -  *  /");
