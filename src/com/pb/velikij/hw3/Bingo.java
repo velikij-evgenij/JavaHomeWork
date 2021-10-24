@@ -16,7 +16,7 @@ public class Bingo {
             System.out.println("Введите Ваш вариант числа и нажмите клавишу \"Ввод\" (если не желаете угадывать, введите число больше 100):");
             variant = variantscan.nextInt();
             if (variant > 100) {
-                System.out.println("Вы сдались после " + --popytka + "-й попытки :(. Досвидание.");
+                System.out.println("Вы сдались после " + --popytka + "-й попытки :(. Загаданное число было "+x+". Досвидание.");
                 break;
             } else if (variant > x) {
                 System.out.println("Число " + variant + " больше задуманого мной!");
