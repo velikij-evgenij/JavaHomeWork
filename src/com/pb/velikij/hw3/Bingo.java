@@ -6,7 +6,7 @@ public class Bingo {
         System.out.println("Привет. Я игра \"Bingo\".");
         Random random = new Random();
         int x = random.nextInt(101);
-        System.out.println("Я загадала целое число в диапазоне от 0 до 100. Отгадаете какое?");
+        System.out.println("Я загадала целое число в диапазоне от 0 до 100." + "\n" + "Попробуйте угадать это число за 5 попыток.");
         int variant;
         int popytka = 0;
         Scanner variantscan = new Scanner(System.in);
