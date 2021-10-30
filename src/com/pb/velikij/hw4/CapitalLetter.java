@@ -20,6 +20,7 @@ public class CapitalLetter {
 
         String[] arraypredlozh = predlozh.split(" ");
 
+
         for(String i:arraypredlozh) {
             zaglav(i);
         }
