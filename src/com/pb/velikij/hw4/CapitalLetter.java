@@ -1,14 +1,6 @@
 package com.pb.velikij.hw4;
-import java.io.BufferedReader;
-import java.util.Random;
-import java.util.Arrays;
+
 import java.util.Scanner;
-import java.util.StringTokenizer;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CapitalLetter {
 
