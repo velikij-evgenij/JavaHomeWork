@@ -1,10 +1,21 @@
 package com.pb.velikij.hw5;
 
+import javax.xml.soap.Text;
+import java.lang.reflect.Array;
+
 public class Book {
 
     private String bookName;
     private String bookAvtor;
     private int bookYear;
+
+    public Book(String bookName, String bookAvtor, int bookYear) {
+        this.bookName=bookName;
+        this.bookAvtor=bookAvtor;
+        if (bookYear > 0) {
+            this.bookYear = bookYear;
+        }
+    }
 
     public String getBookName() {
         if (bookName == null || bookName.isEmpty()) {
@@ -33,8 +44,8 @@ public class Book {
         this.bookYear = bookYear;
     }
 
-    String bookInfo() {
-        return "Книга: " + bookName + ", автор: " + bookAvtor + ", год издания: " + bookYear;
+    String bookInfo(int nomerBook) {
+        return "Книга" + nomerBook + ": \""+ bookName + "\" автор: " + bookAvtor + ", год издания: " + bookYear;
     }
 
 }
