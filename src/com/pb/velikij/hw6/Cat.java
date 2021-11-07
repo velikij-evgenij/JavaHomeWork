@@ -2,13 +2,20 @@ package com.pb.velikij.hw6;
 
 public class Cat extends Animal {
 
-    @Override
-    public void makeNoise(String animalType) {
-        System.out.println("Кошка мяукает.");
+    private String nightVision;
+
+    public Cat (String nightVisionCat) {
+        super("Кот", "кошачий корм", "домашний");
+        this.nightVision=nightVisionCat;
     }
 
     @Override
-    public void eat(String animalType) {
-        System.out.println("Кошка ест кошачий корм.");
+    public void makeNoise() {
+        System.out.println(getType() + " мяукает.");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println(getType() + " ест " + getFood() + ".");
     }
 }

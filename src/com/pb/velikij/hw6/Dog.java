@@ -2,13 +2,20 @@ package com.pb.velikij.hw6;
 
 public class Dog extends Animal {
 
-    @Override
-    public void makeNoise(String animalType) {
-        System.out.println("Собака лает.");
+    private String olfactorySensitivity;
+
+    public Dog (String olfactorySensitivityDog) {
+        super("Собака", "собачий корм", "домашняя");
+        this.olfactorySensitivity=olfactorySensitivityDog;
     }
 
     @Override
-    public void eat(String animalType) {
-        System.out.println("Собака ест собачий корм.");
+    public void makeNoise() {
+        System.out.println(getType() + " лает.");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println(getType() + " ест " + getFood() + ".");
     }
 }
