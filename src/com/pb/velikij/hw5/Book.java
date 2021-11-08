@@ -44,8 +44,8 @@ public class Book {
         this.bookYear = bookYear;
     }
 
-    String bookInfo(int nomerBook) {
-        return "Книга" + nomerBook + ": \""+ bookName + "\" автор: " + bookAvtor + ", год издания: " + bookYear;
+    String bookInfo() {
+        return "Книга" + ": \""+ bookName + "\", автор: " + bookAvtor + ", год издания: " + bookYear;
     }
 
 }

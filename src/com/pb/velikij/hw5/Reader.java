@@ -67,55 +67,37 @@ public class Reader {
         System.out.println("\n" + "У " + readerFamily + " количество взятых книг: " + bookKolichestvo);
     }
 
-    //public void takeBook(Text... bookAvtors) {
-    //    System.out.print("\n" + readerFamily + " взял книги:");
-    //    for (Text i: bookAvtors) {
-     //       System.out.print(" " + i + ",");
-     //   }
-    //}
-
-    //public void takeBook(int... getBookYears) {
-    //    System.out.print("\n" + readerFamily + " взял книги:");
-    //    for (int i: getBookYears) {
-    //        System.out.print(" " + i + ",");
-    //    }
-    //}
-
-
-
-    public void takeBook(String... getBookAvtors) {
+    public void takeBook(String... bookName) {
         System.out.print(readerFamily + " взял книги:");
-        for (String i: getBookAvtors) {
+        for (String i: bookName) {
             System.out.print(" " + i + ",");
         }
     }
 
-    public void takeBook(String getBookAvtors) {
-        System.out.println("\n" + readerFamily + " взял книги: " + getBookAvtors);
-            }
-
+    public void takeBook(Book... books) {
+        System.out.println("\n" + readerFamily + " взял книги: ");
+        for(Book b: books) {
+            System.out.println(b.bookInfo());
+        }
+    }
 
     public void returnBook(int bookKolichestvo) {
         System.out.println("\n" + readerFamily + " из взятых книг вернул: " + bookKolichestvo);
     }
 
-    public void returnBook(String... getBookAvtors) {
+    public void returnBook(String... bookName) {
         System.out.print(readerFamily + " вернул книги:");
-        for (String i: getBookAvtors) {
+        for (String i: bookName) {
             System.out.print(" " + i + ",");
         }
     }
 
-    public void returnBook(String getBookAvtors) {
-        System.out.println("\n" + readerFamily + " вернул книги: " + getBookAvtors);
+    public void returnBook(Book... books) {
+        System.out.println("\n" + readerFamily + " взял книги: ");
+        for(Book b: books) {
+            System.out.println(b.bookInfo());
+        }
     }
-
-
-
-    //public void takeBook(String i) {
-    //    System.out.print("\n" + readerFamily + " взял книги: " + BookName(i) + " (" + "1" + " " + "bookYea" + " г.");
-
-    //}
 
     String readerInfo() {
         return "Читатель: " + readerFamily + ", номер билета: " + readerTicket + ", факультет: " + readerFaculty + ", дата рождения: " + readerBirthday + ", телефон: " + readerPhone;
