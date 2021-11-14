@@ -4,7 +4,11 @@ public class Atelier {
 
     public static void main(String[] args) {
 
-        Size.getDescription("XXS");
+
+
+        Size.L.getEuroSizePr("NLN");
+
+        Size.L.getEuroSize("LO");
 
 
 
