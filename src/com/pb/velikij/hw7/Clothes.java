@@ -7,6 +7,13 @@ public abstract class Clothes {   //создание абстрактного к
     private float price;     //создание переменной "стоимость" (тип число с плавающей точкой), которая характеризует одежду
     private String colour;   //создание переменной "цвет" (тип строка), которая характеризует одежду
 
+    public Clothes(String nameClothes, Size sizeClothes, float priceClothes, String colourClothes) {
+        this.name = nameClothes;
+        this.size = sizeClothes;
+        this.price = priceClothes;
+        this.colour = colourClothes;
+    }
+
     public String getName() {
         return name;
     }
@@ -42,10 +49,7 @@ public abstract class Clothes {   //создание абстрактного к
     static class Tshirt extends Clothes {   //создание класса "Футболка", расширяющего класс "Одежда"
 
         public Tshirt(Size sizeTshirt, float priceTshirt, String colourTshirt) {
-            super.name = "Футболка";
-            super.size = sizeTshirt;
-            super.price = priceTshirt;
-            super.colour = colourTshirt;
+            super("Футболка", sizeTshirt,priceTshirt,colourTshirt);
         }
     }
 
