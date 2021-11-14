@@ -1,6 +1,6 @@
 package com.pb.velikij.hw7;
 
-public enum Size {       //создание специального класса enum-перечисление, который хранит константы
+public enum Size {   //создание специального класса (enum-перечисление) "размер", который хранит константы
 
     XXS(getDescription("XXS"), getEuroSize("XXS")),   //константа - значение размера
     XS(getDescription("XS"), getEuroSize("XS")),      //константа - значение размера

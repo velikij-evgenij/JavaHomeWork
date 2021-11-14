@@ -44,7 +44,5 @@ public class Animal {
         System.out.println(type + " ест.");
     }
 
-    public void sleep() {
-        System.out.println(type + " спит.");
-    }
+    public void sleep() {System.out.println(type + " спит.");}
 }
