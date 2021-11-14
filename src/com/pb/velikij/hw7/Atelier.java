@@ -18,6 +18,9 @@ public class Atelier {
         Clothes.Tshirt Tshirt3 = new Clothes.Tshirt(Size.M, 22,"dsa");
         ManClothes.dressMan(Tshirt3);
 
+        Clothes.Tshirt Tshirt4 = new Clothes.Tshirt(Size.L, 345, "апмва");
+        ManClothes.dressMan(Tshirt4);
+
         }
 
     }
