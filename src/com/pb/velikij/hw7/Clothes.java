@@ -1,6 +1,6 @@
 package com.pb.velikij.hw7;
 
-public abstract class Clothes {   //создание абстрактного класса "Одежда"
+public abstract class Clothes implements ManClothes, WomenClothes {   //создание абстрактного класса "Одежда"
 
     private String name;     //создание переменной "наименование" (тип строка), которая характеризует одежду
     private Size size;       //создание переменной "размер" (тип константы размеров), которая характеризует одежду
@@ -46,24 +46,53 @@ public abstract class Clothes {   //создание абстрактного к
         this.colour = colour;                //присвоение переменной класса private введеного значения характеристики
     }                                        //окончание метода
 
+    @Override                                //переопределение метода
+    public void dressMan() {                 //определение метода "одеть женщину"
+        if (getName() == "Юбка") {                                            //создание условия проверки равенства введенных данных с указаным значением
+            System.out.println(getName() + " не является мужской одеждой");   //если условие выполнилось, выводим соответствующее сообщение
+        } else {                                                              //окончание условия и создание действия для невыполнившихся условий
+            System.out.println("Мужская одежда: " + getName() + ", размер " + getSize() + ", евроразмер " +       //информация о наименовании и размере
+                    Size.getEuroSize(getSize().toString()) + " (" + Size.getDescription(getSize().toString()) +   //информация о евроразмере и описание размера
+                    "), цена " + getPrice() + ", цвет " + getColour());                                           //информация о цене и цвете
+        }                                    //окончание действия для невыполнившихся условий
+    }                                        //окончание метода
+
+    @Override                                //переопределение метода
+    public void dressWomen() {               //определение метода "одеть женщину"
+        if (getName() == "Галстук") {                                         //создание условия проверки равенства введенных данных с указаным значением
+            System.out.println(getName() + " не является женской одеждой");   //если условие выполнилось, выводим соответствующее сообщение
+        } else {                                                              //окончание условия и создание действия для невыполнившихся условий
+            System.out.println("Женска одежда: " + getName() + ", размер " + getSize() + ", евроразмер " +       //информация о наименовании и размере
+                    Size.getEuroSize(getSize().toString()) + " (" + Size.getDescription(getSize().toString()) +   //информация о евроразмере и описание размера
+                    "), цена " + getPrice() + ", цвет " + getColour());                                           //информация о цене и цвете
+        }                                    //окончание действия для невыполнившихся условий
+    }                                        //окончание метода
+
     static class Tshirt extends Clothes {    //создание внутреннего класса "Футболка", расширяющего класс "Одежда"
 
         public Tshirt(Size sizeTshirt, float priceTshirt, String colourTshirt) {   //создание конструктора расширяющего класса
-            super("Футболка", sizeTshirt,priceTshirt,colourTshirt);    //корректировка родительского конструктора
+            super("Футболка", sizeTshirt,priceTshirt,colourTshirt);    //корректировка конструктора суперкласса
         }                                                                         //окончание конструктора
     }                                        //окончание внутреннего класса
 
     static class Pants extends Clothes {     //создание внутреннего класса "Штаны", расширяющего класс "Одежда"
 
         public Pants(Size sizePants, float pricePants, String colourPants) {       //создание конструктора расширяющего класса
-            super("Штаны", sizePants,pricePants,colourPants);          //корректировка родительского конструктора
+            super("Штаны", sizePants,pricePants,colourPants);          //корректировка конструктора суперкласса
         }                                                                         //окончание конструктора
     }                                        //окончание внутреннего класса
 
     static class Skirt extends Clothes {     //создание внутреннего класса "Юбка", расширяющего класс "Одежда"
 
         public Skirt(Size sizeSkirt, float priceSkirt, String colourSkirt) {       //создание конструктора расширяющего класса
-            super("Юбка", sizeSkirt,priceSkirt,colourSkirt);           //корректировка родительского конструктора
+            super("Юбка", sizeSkirt,priceSkirt,colourSkirt);           //корректировка конструктора суперкласса
         }                                                                         //окончание конструктора
     }                                        //окончание внутреннего класса
-}
+
+    static class Tie extends Clothes {       //создание внутреннего класса "Галстук", расширяющего класс "Одежда"
+
+        public Tie(Size sizeTie, float priceTie, String colourTie) {               //создание конструктора расширяющего класса
+            super("Галстук", sizeTie,priceTie,colourTie);              //корректировка конструктора суперкласса
+        }                                                                         //окончание конструктора
+    }                                        //окончание внутреннего класса
+}                                            //окончание абстрактного класса

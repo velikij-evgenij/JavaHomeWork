@@ -10,16 +10,16 @@ public class Atelier {
         Size.L.getEuroSize("LO");
 
         Clothes.Tshirt Tshirt1 = new Clothes.Tshirt(Size.XXS, 125, "белый");
-        ManClothes.dressMan(Tshirt1);
+        Tshirt1.dressMan();
 
-        Clothes.Tshirt Tshirt2 = new Clothes.Tshirt(Size.S, 455, "ert");
-        ManClothes.dressMan(Tshirt2);
+        Clothes.Tshirt Tshirt2 = new Clothes.Tshirt(Size.S, 455, "черный");
+        Tshirt2.dressWomen();
 
-        Clothes.Tshirt Tshirt3 = new Clothes.Tshirt(Size.M, 22,"dsa");
-        ManClothes.dressMan(Tshirt3);
+        Clothes.Tie Tie1 = new Clothes.Tie(Size.M, 22,"dsa");
+        Tie1.dressWomen();
 
-        Clothes.Tshirt Tshirt4 = new Clothes.Tshirt(Size.L, 345, "апмва");
-        ManClothes.dressMan(Tshirt4);
+        Clothes.Skirt Skirt1 = new Clothes.Skirt(Size.L, 345, "апмва");
+        Skirt1.dressMan();
 
         }
 
