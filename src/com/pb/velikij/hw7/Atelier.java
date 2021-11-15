@@ -13,16 +13,24 @@ public class Atelier {
 
         Clothes[] clothesArray = new Clothes[] {Tshirt1, Pants1, Skirt1, Tie1};
 
-
+        dressManArray(clothesArray);
+        System.out.println();
+        dressWomenArray(clothesArray);
     }
 
     static void dressManArray(Clothes[] nameArray) {
-        System.out.println("Мужская одежда:");
-        for (Clothes clothe : nameArray) {
-            if (clothe instanceof ManClothes) {
-                ((ManClothes) clothe).dressMan();
+        for (Clothes i: nameArray) {
+            if (i instanceof ManClothes) {
+                ((ManClothes) i).dressMan();
             }
         }
     }
 
+    static void dressWomenArray(Clothes[] nameArray) {
+        for (Clothes i: nameArray) {
+            if (i instanceof WomenClothes) {
+                ((WomenClothes) i).dressWomen();
+            }
+        }
+    }
 }
