@@ -1,7 +1,5 @@
 package com.pb.velikij.hw7;
 
-import com.pb.velikij.hw6.Animal;
-
 import java.util.Arrays;
 
 public class Atelier {
@@ -15,12 +13,16 @@ public class Atelier {
 
         Clothes[] clothesArray = new Clothes[] {Tshirt1, Pants1, Skirt1, Tie1};
 
-        public void dressMan(Clothes[] clothesArray) {
 
-            Object obj = clothesArray;
-            if (obj instanceof dressMan) {
-                obj.dressMan;
+    }
+
+    static void dressManArray(String[] nameArray) {
+        System.out.println("Мужская одежда:");
+        for (Clothes clothe : nameArray) {
+            if (clothe instanceof ManClothes) {
+                ((ManClothes) clothe).dressMan();
             }
         }
     }
+
 }
