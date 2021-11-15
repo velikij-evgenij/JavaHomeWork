@@ -16,7 +16,7 @@ public class Atelier {
 
     }
 
-    static void dressManArray(String[] nameArray) {
+    static void dressManArray(Clothes[] nameArray) {
         System.out.println("Мужская одежда:");
         for (Clothes clothe : nameArray) {
             if (clothe instanceof ManClothes) {
