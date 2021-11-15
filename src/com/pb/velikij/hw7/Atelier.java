@@ -1,7 +1,5 @@
 package com.pb.velikij.hw7;
 
-import java.util.Arrays;
-
 public class Atelier {
 
     public static void main(String[] args) {
@@ -20,8 +18,8 @@ public class Atelier {
 
     static void dressManArray(Clothes[] nameArray) {
         for (Clothes i: nameArray) {
-            if (i instanceof ManClothes) {
-                ((ManClothes) i).dressMan();
+            if (i.getName() != "Юбка") {
+                i.dressMan();
             }
         }
     }
@@ -29,7 +27,7 @@ public class Atelier {
     static void dressWomenArray(Clothes[] nameArray) {
         for (Clothes i: nameArray) {
             if (i instanceof WomenClothes) {
-                ((WomenClothes) i).dressWomen();
+                i.dressWomen();
             }
         }
     }
