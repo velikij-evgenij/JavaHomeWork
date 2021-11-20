@@ -5,6 +5,14 @@ public class OnlineShop {
     public static void main(String[] args) {
 
         Auth Auth1 = new Auth();
-        Auth1.signUp();
+
+        for (int i=5; i>0;) {
+            try {
+                Auth1.signUp();
+                i=0;
+            } catch (Auth.WrongLoginException e) {
+                System.out.println("Для ввода логина осталось попыток: " + --i);
+            }
+        }
     }
 }

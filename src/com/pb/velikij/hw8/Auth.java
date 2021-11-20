@@ -24,11 +24,10 @@ public class Auth {                                //создание класс
         this.password = password;
     }
 
-    public void signUp() {                                                     //создание метода "зарегистрироваться"
+    public void signUp() throws WrongLoginException {                                                     //создание метода "зарегистрироваться"
 
         System.out.println("Для регистрации на сайте введите Логин." + "\n" +   //вывод сообщения о логине
-                "Длинна Логина должна быть от 5 до 20 символов." + "\n" +
-                "Логин должен содержать только латинские буквы и цифры.");
+                "Длинна Логина должна быть от 5 до 20 символов. Логин должен содержать только латинские буквы и цифры.");
 
         Scanner scanLogin = new Scanner(System.in);                             //запрос ввода логина
         String newLogin = scanLogin.nextLine();
@@ -37,7 +36,8 @@ public class Auth {                                //создание класс
             System.out.println("Ваш Логин: " + getLogin() + "\n" +
                     "Введите пароль.");
         } else {
-            System.out.println("Логин не соответствует требованиям.");
+            System.out.println("Внимание! Набор символов \"" +newLogin + "\" не может использоваться в качестве логина.");
+            throw new WrongLoginException ();
         }
     }
 
