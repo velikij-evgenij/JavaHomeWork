@@ -24,7 +24,7 @@ public class Auth {                                //создание класс
         this.password = password;
     }
 
-    public void signUp() throws WrongLoginException {                           //создание метода "зарегистрироваться" с вызовом обработки исключения
+    public void signUp() throws WrongLoginException, WrongPasswordException {   //создание метода "зарегистрироваться" с вызовом обработки исключения
 
         Scanner scanScan = new Scanner(System.in);                              //создание переменной ввода данных пользователем
 
@@ -48,24 +48,37 @@ public class Auth {                                //создание класс
             System.out.println("Введите повторно Пароль.");                   //вывод сообщения о пароле
             scanString = scanScan.nextLine();                                 //запрос ввода пароля
             if (scanString.equals(getPassword())) {                           //создание условия и проверка соответствия повторного пароля
-                System.out.println("Ваш Пароль сохранен." + "\n");            //вывод сообщения о успешном вводе пароля
+                System.out.println("Ваш Пароль сохранен." + "\n" + "\n" +     //вывод сообщения о успешном вводе пароля
+                        "Регистрация прошла успешно!");
             } else {                                                          //создание действий при отрицательной проверке
-                System.out.println("Внимание! Повторно введенный пароль " +   //вывод сообщения о успешном вводе логина
+                System.out.println("Внимание! Повторно введенный Пароль " +   //вывод сообщения о неправильном пароле
                         "не соответствует первоначальному." + "\n");
+                setPassword(null);                                            //сброс пароля
+                throw new WrongPasswordException ();                          //вызов метода обработки исключения
             }
         } else {                                                              //создание действий при отрицательной проверке
-            System.out.println("Внимание! Набор символов \"" + scanString +   //вывод сообщения о некорректном логине
-                    "\" не может использоваться в качестве Пароля.");
-            throw new WrongLoginException ();                                 //вызов метода обработки исключения
+            System.out.println("Внимание! Введенный набор символов " +        //вывод сообщения о некорректном пароле
+                    "не может использоваться в качестве Пароля.");
+            throw new WrongPasswordException ();                              //вызов метода обработки исключения
         }
     }
 
-    public class WrongLoginException extends Exception {                       //создание класса обработки исключения
+    public class WrongLoginException extends Exception {                      //создание класса обработки исключения
 
-        public WrongLoginException() {                                         //создание конструктора без ввода данных
+        public WrongLoginException() {                                        //создание конструктора без ввода данных
         }
 
-        public WrongLoginException(String message) {                           //создание конструктора с вводом сообщения
+        public WrongLoginException(String message) {                          //создание конструктора с вводом сообщения
+            super(message);
+        }
+    }
+
+    public class WrongPasswordException extends Exception {                      //создание класса обработки исключения
+
+        public WrongPasswordException() {                                        //создание конструктора без ввода данных
+        }
+
+        public WrongPasswordException(String message) {                          //создание конструктора с вводом сообщения
             super(message);
         }
     }

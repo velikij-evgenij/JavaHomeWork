@@ -10,8 +10,8 @@ public class OnlineShop {
             try {
                 Auth1.signUp();
                 i=0;
-            } catch (Auth.WrongLoginException e) {
-                System.out.println("Осталось попыток: " + --i);
+            } catch (Auth.WrongLoginException | Auth.WrongPasswordException e1) {
+                System.out.println("Для регистрации сталось попыток: " + --i);
             }
         }
     }
