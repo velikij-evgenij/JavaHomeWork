@@ -24,29 +24,48 @@ public class Auth {                                //создание класс
         this.password = password;
     }
 
-    public void signUp() throws WrongLoginException {                                                     //создание метода "зарегистрироваться"
+    public void signUp() throws WrongLoginException {                           //создание метода "зарегистрироваться" с вызовом обработки исключения
+
+        Scanner scanScan = new Scanner(System.in);                              //создание переменной ввода данных пользователем
 
         System.out.println("Для регистрации на сайте введите Логин." + "\n" +   //вывод сообщения о логине
-                "Длинна Логина должна быть от 5 до 20 символов. Логин должен содержать только латинские буквы и цифры.");
+                "Длинна Логина должна быть от 5 до 20 символов. Вводите только латинские буквы и цифры.");
+        String scanString = scanScan.nextLine();                                //создание переменной ввода строки и запрос ввода логина
+        if (Pattern.matches("[a-zA-Z0-9]{5,20}",scanString)) {           //создание условия и проверка соответствия логина шаблону
+            setLogin(scanString);                                              //сохранение логина после положительной проверки
+            System.out.println("Ваш Логин: " + getLogin() + "\n");             //вывод сообщения о успешном вводе логина
+        } else {                                                               //создание действий при отрицательной проверке
+            System.out.println("Внимание! Набор символов \"" + scanString +    //вывод сообщения о некорректном логине
+                    "\" не может использоваться в качестве Логина.");
+            throw new WrongLoginException ();                                  //вызов метода обработки исключения
+        }
 
-        Scanner scanLogin = new Scanner(System.in);                             //запрос ввода логина
-        String newLogin = scanLogin.nextLine();
-        if (Pattern.matches("[a-zA-Z0-9]{5,20}",newLogin)) {       //проверка логина на соответствие шаблону
-            setLogin(newLogin);
-            System.out.println("Ваш Логин: " + getLogin() + "\n" +
-                    "Введите пароль.");
-        } else {
-            System.out.println("Внимание! Набор символов \"" +newLogin + "\" не может использоваться в качестве логина.");
-            throw new WrongLoginException ();
+        System.out.println("Введите Пароль." + "\n" +                          //вывод сообщения о пароле
+                "Длинна Пароля должна быть более 5 символов. Вводите только латинские буквы и цифры и знак подчеркивания.");
+        scanString = scanScan.nextLine();                                      //запрос ввода пароля
+        if (Pattern.matches("[a-zA-Z0-9_]{5,}",scanString)) {           //создание условия и проверка соответствия пароля шаблону
+            setPassword(scanString);                                          //сохранение пароля после положительной проверки
+            System.out.println("Введите повторно Пароль.");                   //вывод сообщения о пароле
+            scanString = scanScan.nextLine();                                 //запрос ввода пароля
+            if (scanString.equals(getPassword())) {                           //создание условия и проверка соответствия повторного пароля
+                System.out.println("Ваш Пароль сохранен." + "\n");            //вывод сообщения о успешном вводе пароля
+            } else {                                                          //создание действий при отрицательной проверке
+                System.out.println("Внимание! Повторно введенный пароль " +   //вывод сообщения о успешном вводе логина
+                        "не соответствует первоначальному." + "\n");
+            }
+        } else {                                                              //создание действий при отрицательной проверке
+            System.out.println("Внимание! Набор символов \"" + scanString +   //вывод сообщения о некорректном логине
+                    "\" не может использоваться в качестве Пароля.");
+            throw new WrongLoginException ();                                 //вызов метода обработки исключения
         }
     }
 
-    public class WrongLoginException extends Exception {
+    public class WrongLoginException extends Exception {                       //создание класса обработки исключения
 
-        public WrongLoginException() {
+        public WrongLoginException() {                                         //создание конструктора без ввода данных
         }
 
-        public WrongLoginException(String message) {
+        public WrongLoginException(String message) {                           //создание конструктора с вводом сообщения
             super(message);
         }
     }

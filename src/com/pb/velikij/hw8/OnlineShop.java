@@ -11,7 +11,7 @@ public class OnlineShop {
                 Auth1.signUp();
                 i=0;
             } catch (Auth.WrongLoginException e) {
-                System.out.println("Для ввода логина осталось попыток: " + --i);
+                System.out.println("Осталось попыток: " + --i);
             }
         }
     }
