@@ -4,8 +4,7 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.Random;
 
-public class FileNumbers {
-    private Path path;                                                                           //создание класса "Файл "Числа"
+public class FileNumbers {                                                                                      //создание класса "Файл чисел"
 
     public static void main(String[] args) {
 
@@ -14,7 +13,7 @@ public class FileNumbers {
 
     }
 
-    public static void createNumbersFile() {                                                     //создание метода "создание файла "Числа"
+    public static void createNumbersFile() {                                                                    //создание метода "числа файла"
 
         Path fileUser = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\numbers.txt");
         Random random = new Random();
@@ -37,7 +36,7 @@ public class FileNumbers {
         System.out.println("Вышеизложенные строки с числами были успешно записаны в файл: " + fileUser + "\n");
     }
 
-    public static void createOddNumbersFile() {                                                     //создание метода "создание файла "Числа"
+    public static void createOddNumbersFile() {                                                                 //создание метода "нечетные числа файла"
 
         Path fileUser = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\odd-numbers.txt.txt");
         Random random = new Random();
