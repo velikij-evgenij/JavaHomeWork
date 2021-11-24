@@ -42,13 +42,13 @@ public class FileNumbers {                                                      
         Path fileWithNumbers = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\numbers.txt");
         try (BufferedReader readingEye = Files.newBufferedReader(fileWithNumbers)) {
 
-            String line;
-            while((line = readingEye.readLine()) != null) {
-                System.out.println(line);
+            String tenNumbers;
+            while((tenNumbers = readingEye.readLine()) != null) {
+                System.out.println(tenNumbers);
             }
             System.out.println();
         } catch (Exception ex) {
-            System.out.println("Error with file read: " + ex);
+            System.out.println("При считывании данных с файла произошла ошибка: " + ex);
         }
 
 
