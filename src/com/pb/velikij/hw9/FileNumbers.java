@@ -1,5 +1,6 @@
 package com.pb.velikij.hw9;
 
+import java.awt.*;
 import java.io.*;
 import java.nio.file.*;
 import java.util.Random;
@@ -15,11 +16,11 @@ public class FileNumbers {                                                      
 
     public static void createNumbersFile() {                                                                    //создание метода "числа файла"
 
-        Path fileUser = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\numbers.txt");
+        Path fileWithNumbers = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\numbers.txt");
         Random random = new Random();
         int x;
 
-        try (BufferedWriter writingPen = Files.newBufferedWriter(fileUser)) {
+        try (BufferedWriter writingPen = Files.newBufferedWriter(fileWithNumbers)) {
             for (int j=10; j>0; --j) {
                 String y ="";
                 for (int i=10; i>0; --i) {
@@ -33,16 +34,29 @@ public class FileNumbers {                                                      
         } catch (Exception ex) {
             System.out.println("При записи данных в файл возникла ошибка: " + ex);
         }
-        System.out.println("Вышеизложенные строки с числами были успешно записаны в файл: " + fileUser + "\n");
+        System.out.println("Вышеизложенные строки с числами были успешно записаны в файл: " + fileWithNumbers + "\n");
     }
 
     public static void createOddNumbersFile() {                                                                 //создание метода "нечетные числа файла"
 
-        Path fileUser = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\odd-numbers.txt.txt");
+        Path fileWithNumbers = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\numbers.txt");
+        try (BufferedReader readingEye = Files.newBufferedReader(fileWithNumbers)) {
+
+            String line;
+            while((line = readingEye.readLine()) != null) {
+                System.out.println(line);
+            }
+            System.out.println();
+        } catch (Exception ex) {
+            System.out.println("Error with file read: " + ex);
+        }
+
+
+        Path fileWithOddNumbers = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\odd-numbers.txt.txt");
         Random random = new Random();
         int x;
 
-        try (BufferedWriter writingPen = Files.newBufferedWriter(fileUser)) {
+        try (BufferedWriter writingPen = Files.newBufferedWriter(fileWithOddNumbers)) {
             for (int j=10; j>0; --j) {
                 String y ="";
                 for (int i=10; i>0; --i) {
@@ -56,6 +70,6 @@ public class FileNumbers {                                                      
         } catch (Exception ex) {
             System.out.println("При записи данных в файл возникла ошибка: " + ex);
         }
-        System.out.println("Вышеизложенные строки с числами были успешно записаны в файл: " + fileUser);
+        System.out.println("Вышеизложенные строки с числами были успешно записаны в файл: " + fileWithOddNumbers);
     }
 }
