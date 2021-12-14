@@ -3,7 +3,7 @@ package com.pb.velikij.hw9;
 import java.awt.*;
 import java.io.*;
 import java.nio.file.*;
-import java.util.Random;
+import java.util.Random; //тест
 
 public class FileNumbers {                                                                                      //создание класса "Файл чисел"
 
