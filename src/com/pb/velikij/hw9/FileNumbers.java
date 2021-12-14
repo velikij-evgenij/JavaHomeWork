@@ -16,7 +16,7 @@ public class FileNumbers {                                                      
 
     public static void createNumbersFile() {                                                                      //создание метода "числа файла"
 
-        Path fileWithNumbers = Paths.get("C:\\Users\\Дом\\Desktop\\Java\\files\\numbers2.txt");
+        Path fileWithNumbers = Paths.get("C:\\Users\\Дом\\Desktop\\Java\\files\\numbers.txt");
         Random random = new Random();
         int x;
 
@@ -39,7 +39,7 @@ public class FileNumbers {                                                      
 
     public static void createOddNumbersFile() {                                                                 //создание метода "нечетные числа файла"
 
-        Path fileWithNumbers = Paths.get("C:\\Users\\Дом\\Desktop\\Java\\files\\numbers2.txt");
+        Path fileWithNumbers = Paths.get("C:\\Users\\Дом\\Desktop\\Java\\files\\numbers.txt");
         try (BufferedReader readingEye = Files.newBufferedReader(fileWithNumbers)) {
 
             String tenNumbers;
@@ -52,7 +52,7 @@ public class FileNumbers {                                                      
         }
 
 
-        Path fileWithOddNumbers = Paths.get("C:\\Users\\Дом\\Desktop\\Java\\files\\odd-numbers2.txt.txt");
+        Path fileWithOddNumbers = Paths.get("C:\\Users\\Дом\\Desktop\\Java\\files\\odd-numbers.txt.txt");
         Random random = new Random();
         int x;
 
