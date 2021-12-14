@@ -3,7 +3,7 @@ package com.pb.velikij.hw9;
 import java.awt.*;
 import java.io.*;
 import java.nio.file.*;
-import java.util.Random; //тест
+import java.util.Random;
 
 public class FileNumbers {                                                                                      //создание класса "Файл чисел"
 
@@ -14,9 +14,9 @@ public class FileNumbers {                                                      
 
     }
 
-    public static void createNumbersFile() {                                                                    //создание метода "числа файла"
+    public static void createNumbersFile() {                                                                      //создание метода "числа файла"
 
-        Path fileWithNumbers = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\numbers.txt");
+        Path fileWithNumbers = Paths.get("C:\\Users\\Дом\\Desktop\\Java\\files\\numbers2.txt");
         Random random = new Random();
         int x;
 
@@ -39,7 +39,7 @@ public class FileNumbers {                                                      
 
     public static void createOddNumbersFile() {                                                                 //создание метода "нечетные числа файла"
 
-        Path fileWithNumbers = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\numbers.txt");
+        Path fileWithNumbers = Paths.get("C:\\Users\\Дом\\Desktop\\Java\\files\\numbers2.txt");
         try (BufferedReader readingEye = Files.newBufferedReader(fileWithNumbers)) {
 
             String tenNumbers;
@@ -52,7 +52,7 @@ public class FileNumbers {                                                      
         }
 
 
-        Path fileWithOddNumbers = Paths.get("C:\\Users\\schoo\\Desktop\\java\\files\\odd-numbers.txt.txt");
+        Path fileWithOddNumbers = Paths.get("C:\\Users\\Дом\\Desktop\\Java\\files\\odd-numbers2.txt.txt");
         Random random = new Random();
         int x;
 
